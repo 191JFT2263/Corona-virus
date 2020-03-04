@@ -1,0 +1,5 @@
+pour demmarer le jeu avec Linux :
+
+gcc -o JEU main.c code.c -lm -lSDL_mixer  `sdl-config --libs --cflags` -lSDL_image -lSDL_ttf  -lSDL 
+
+./JEU
