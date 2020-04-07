@@ -5,7 +5,7 @@ int continuer=1,boutonfull,son,captson=0,captfull=0,boutonmenu1,boutonmenu2,bout
 imgconfig image[20],image2[200];
 SDL_Surface *ecran = NULL,*icon= NULL;
 SDL_Rect positionClic,positionSouris;
-
+int k=0,resultat;
 
 TTF_Font *fonttest=NULL;
 SDL_Color colorCoor={1,254,254};
@@ -30,7 +30,7 @@ if (fichier != NULL)
 else{
 ecran = SDL_SetVideoMode(L_F,H_F,32,SDL_HWSURFACE | SDL_DOUBLEBUF ); //fenetre de programme. | SDL_NOFRAME |SDL_FULLSCREEN
 boutonfull=0;
-    } 
+    }
 
 
 
@@ -65,15 +65,21 @@ if (fichier != NULL)
     	}
 else
 	{
-	ecran = SDL_SetVideoMode(L_F,H_F,32,SDL_HWSURFACE | SDL_DOUBLEBUF ); //fenetre de programme. | SDL_NOFRAME |SDL_FULLSCREEN
+	ecran = SDL_SetVideoMode(L_F,H_F,32,SDL_HWSURFACE | SDL_DOUBLEBUF  ); //fenetre de programme. | SDL_NOFRAME |SDL_FULLSCREEN
         boutonfull=0;
-	} 
+	}
 captfull=0;
 }
 
 
 
-SDL_BlitSurface(image2[i].screen,NULL,ecran,&image[1].position);i++;if(i==40)i=0;
+SDL_BlitSurface(image2[i].screen,NULL,ecran,&image[1].position);
+if(k==10)
+{i++;
+k=0;
+}
+k++;
+if(i==40)i=0;
 SDL_BlitSurface(image[2].screen,NULL,ecran,&image[2].position);
 SDL_BlitSurface(image[5].screen,NULL,ecran,&image[5].position);
 SDL_BlitSurface(image[8].screen,NULL,ecran,&image[8].position);
@@ -85,7 +91,7 @@ else if(entre==2 || boutonmenu2==1)
 {SDL_BlitSurface(image[6].screen,NULL,ecran,&image[5].position);}
 else if(entre==3 || boutonmenu3==1)
 {SDL_BlitSurface(image[9].screen,NULL,ecran,&image[8].position);}
-	
+
 
 
 
@@ -104,9 +110,13 @@ else if(entre==3 || boutonmenu3==1)
 		{
 
 		case SDLK_ESCAPE:
-		continuer=0;break;
+		continuer=0;
+    break;
 
-		case SDLK_j: 
+    case SDLK_p:
+    enigme(image,ecran,&resultat);
+    break;
+		case SDLK_j:
 		SDL_BlitSurface(image[4].screen,NULL,ecran,&image[2].position);
 		jouer(ecran,image,music2,&captson,clickson);
 		SDL_Flip(ecran);
@@ -114,11 +124,11 @@ else if(entre==3 || boutonmenu3==1)
 		break;
 
 		case SDLK_UP:
-		up(&prec,image,&entre);break;
-		
+		up(&prec,image,&entre);SDL_Delay(100);break;
+
 		case SDLK_DOWN:
-		down(&prec,image,&entre);break;
-		
+		down(&prec,image,&entre);SDL_Delay(100);break;
+
 		case SDLK_KP_ENTER:
 		Mix_PlayChannel(-1,clickson,0);
 		switch (entre)
@@ -144,26 +154,26 @@ else if(entre==3 || boutonmenu3==1)
 			break;
 		}
 		break;
-		
+
 		}
 
 	case SDL_MOUSEBUTTONDOWN:
 		Mix_PlayChannel(-1,clickson,0);
-		if(event.button.button == SDL_BUTTON_LEFT)	
+		if(event.button.button == SDL_BUTTON_LEFT)
 		{
 			if(event.button.x> 570 && event.button.x< 710 && event.button.y> 320 && event.button.y< 366)
-			{	
-			
+			{
+
 			SDL_BlitSurface(image[4].screen,NULL,ecran,&image[2].position);
 			SDL_Flip(ecran);
 			SDL_Delay(100);
 			jouer(ecran,image,music2,&captson,clickson);
-			
+
 
 			}
 			else if(event.button.x> 570 && event.button.x< 710 && event.button.y> 402 && event.button.y< 447)
 			{
-			
+
 			SDL_BlitSurface(image[7].screen,NULL,ecran,&image[5].position);
 			SDL_Flip(ecran);
 			SDL_Delay(100);
@@ -174,26 +184,26 @@ else if(entre==3 || boutonmenu3==1)
 			SDL_BlitSurface(image[10].screen,NULL,ecran,&image[8].position);
 			SDL_Flip(ecran);
 			SDL_Delay(100);
-			
+
 			exit(0);
-			}		
+			}
 		}
 	break;
 
 
 	case SDL_MOUSEMOTION:
-		
+
 		image[0].position.x = event.motion.x;image[0].position.y = event.motion.y;
 		if(event.motion.x> 570 && event.motion.x< 710 && event.motion.y> 320 && event.motion.y< 366 )
 		{
 			SDL_BlitSurface(image[3].screen,NULL,ecran,&image[2].position);entre=1;
-			
+
 		}
 		if(event.motion.x> 570 && event.motion.x< 710 && event.motion.y> 402 && event.motion.y< 447 )
-		{	
+		{
 			SDL_BlitSurface(image[6].screen,NULL,ecran,&image[5].position);entre=2;
-		}	
-		
+		}
+
 		else if(event.motion.x> 570 && event.motion.x< 710 && event.motion.y> 485 && event.motion.y< 530 )
 		{
 			SDL_BlitSurface(image[9].screen,NULL,ecran,&image[8].position);entre=3;

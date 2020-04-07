@@ -1,6 +1,7 @@
 #include "code.h"
+
 void loadannimation(imgconfig *image2)
-{ 
+{
 
 
 image2[0].screen=IMG_Load("IMAGE/ANNIMATION/00000.jpg");
@@ -71,7 +72,7 @@ image[10].screen=IMG_Load("IMAGE/QUIT3.png");
 image[11].screen=IMG_Load("IMAGE/JOUER.png");
 image[12].screen=IMG_Load("IMAGE/BACK.png");
 			image[12].position.x=166;
-			image[12].position.y=81;		
+			image[12].position.y=81;
 image[13].screen=IMG_Load("IMAGE/NORMAL.png");
 			image[13].position.x=621;
 			image[13].position.y=532;
@@ -84,6 +85,9 @@ image[15].screen=IMG_Load("IMAGE/backgroundsetting.png");
 image[16].screen=IMG_Load("IMAGE/VOL.png");
 			image[16].position.x=1015;
 			image[16].position.y=456;
+image[17].screen=IMG_Load("IMAGE/zonetxt.png");
+			image[17].position.x=400;
+			image[17].position.y=500;
 }
 
 
@@ -130,7 +134,7 @@ SDL_Event event;
 Mix_PlayMusic(music2,-1);
 (*captson)=1;
 while(continuer)
-{	
+{
 SDL_BlitSurface(image[11].screen,NULL,ecran,&image[11].position);
 SDL_Flip(ecran);
 SDL_PollEvent(&event);
@@ -157,13 +161,13 @@ void setting (SDL_Surface *ecran,imgconfig *image,int *boutonfull,int *captfull,
    FILE* fichier = NULL;
 	int continuer=1,x,boutonback=0;
 	SDL_Event event;
-	
+
 
 
 while(continuer)
 {
 
-	
+
 
 
 
@@ -187,7 +191,7 @@ while(continuer)
 			}
 			break;
 		}
-	
+
 		}
 		break;
 	case SDL_MOUSEMOTION:
@@ -198,22 +202,22 @@ while(continuer)
 			{
 			boutonback=1;
 			}
-			
+
 	break;
 
 	case SDL_MOUSEBUTTONDOWN:
 		Mix_PlayChannel(-1,clickson,0);
-		if(event.button.button == SDL_BUTTON_LEFT)	
+		if(event.button.button == SDL_BUTTON_LEFT)
 		{
-			
+
 			if(event.button.x> 757 && event.button.x< 830 && event.button.y> 532 && event.button.y< 605 && (*boutonfull)==0 )
 			{
 				  fichier = fopen("FICHE/mode.txt", "w");(*boutonfull)=1;(*captfull)=1;
 				  fclose(fichier);
 			}
 			else if(event.button.x> 621 && event.button.x< 695 && event.button.y> 532 && event.button.y< 605 && (*boutonfull)==1 )
-				  {remove("FICHE/mode.txt.txt");(*boutonfull)=0;(*captfull)=1;}
-			
+				  {remove("FICHE/mode.txt");(*boutonfull)=0;(*captfull)=1;}
+
 			else if(event.button.x> 166 && event.button.x< 310 && event.button.y> 81 && event.button.y< 226 )
 			{continuer=0;boutonback=1;}
 			else if(event.button.x> 716 && event.button.x< 723 && event.button.y> 462 && event.button.y< 476 )
@@ -233,12 +237,12 @@ while(continuer)
 			Mix_VolumeMusic(Mix_VolumeMusic(-1)+x);
 
 
-			
+
 			}
-			
+
 		}
 
-		
+
 	break;
 
 	}
@@ -264,13 +268,3 @@ SDL_Flip(ecran);
 (*prec)=0;
 
 }
-
-
-
-
-
-
-
-
-
-

@@ -4,6 +4,9 @@
 #include <SDL/SDL_mixer.h>
 #include <SDL/SDL_image.h>
 #include <SDL/SDL_ttf.h>
+#include <time.h>
+#include <string.h>
+#include <math.h>
 
 #ifndef DEF_CONSTANTES
 #define DEF_CONSTANTES //evite les inclustions infinies.
@@ -39,6 +42,16 @@ void setting (SDL_Surface *ecran,imgconfig *image,int *boutonfull,int *captfull,
 // up-down
 void down(int *prec,imgconfig *image,int *entre);
 void up(int *prec,imgconfig *image,int *entre);
+
+
+//quiz
+void saisie (double *a, double *b, double *c);
+int atoi(const char *string);
+int resoudre (double a, double b, double c, double *x1, double *x2);
+void affiche (int v, double x1, double x2);
+void quiztrue(SDL_Surface *ecran);
+void quizfalse(SDL_Surface *ecran);
+void enigme(imgconfig *image,SDL_Surface *ecran,int *resultat );
 
 
 

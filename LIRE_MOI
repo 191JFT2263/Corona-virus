@@ -1,5 +1,9 @@
 pour demmarer le jeu avec Linux :
 
-gcc -o JEU main.c code.c -lm -lSDL_mixer  `sdl-config --libs --cflags` -lSDL_image -lSDL_ttf  -lSDL 
+gcc -o JEU main.c code.c enigme.c -lm -lSDL_mixer  `sdl-config --libs --cflags` -lSDL_image -lSDL_ttf  -lSDL
 
 ./JEU
+
+
+
+pour demmarer l'enigme il faut 'cliquez' sur la touche P du clavier //
