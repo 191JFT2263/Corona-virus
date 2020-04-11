@@ -208,9 +208,9 @@ int timer=0,clic=0,r=0,x,ncc=5,xx1,valider=0,comparer,nc2=0;
       timer++;
     }
 
-    if(timer<6000)
+    if(timer<3000)
     saisie(&a, &b, &c);
-    if (timer==6000)
+    if (timer==3000)
     {
     val = resoudre(a, b, c, &x1, &x2);
     switch(val)
@@ -266,15 +266,15 @@ int timer=0,clic=0,r=0,x,ncc=5,xx1,valider=0,comparer,nc2=0;
   }
 
 
-  if(comparer==1)
-  if (clic==2)
+if(comparer==1)
+    if (clic==2)
   {
     SDL_BlitSurface(text1,NULL,ecran,&textpos);
     SDL_BlitSurface(image[17].screen,NULL,ecran,&image[17].position);
     SDL_BlitSurface(textx1,NULL,ecran,&textx1pos);
-  SDL_BlitSurface(reponse,NULL,ecran,&image[17].position);}
+    SDL_BlitSurface(reponse,NULL,ecran,&image[17].position);}
 if(comparer==2)
-if(clic==3)
+    if (clic==3)
   {
     SDL_BlitSurface(text2,NULL,ecran,&textpos);
     SDL_BlitSurface(image[17].screen,NULL,ecran,&image[17].position);
@@ -296,7 +296,7 @@ if(clic==3)
     SDL_BlitSurface(choixrep3,NULL,ecran,&choixrep3pos);
     SDL_BlitSurface(choixrep4,NULL,ecran,&choixrep4pos);
   }
-  if(r==1)
+  if(r==1 && timer >3050)
   {
     switch (val) {
     case 0:
@@ -314,7 +314,7 @@ if(clic==3)
     case 3:
     SDL_BlitSurface(solu,NULL,ecran,&solutionpos);
     break;
-  }
+                }
   }
 
 
@@ -561,30 +561,29 @@ if(clic==3)
         if(comparer==1)
           {
             if(strcmp(chaine,chainex1)==0)
-            quiztrue(ecran);
+            {quiztrue(ecran);(*resultat)=1;}
             else if(!strcmp(chaine,chainex1))
-            quizfalse(ecran);
-
+            {quizfalse(ecran);(*resultat)=0;}
           }
 
           else if(comparer==2)
           {
             if((strcmp(chaine,chainex1)==0 && strcmp(chaine2,chainex2)==0 ) || (strcmp(chaine2,chainex1)==0 && strcmp(chaine,chainex2)==0) )
-            quiztrue(ecran);
+            {quiztrue(ecran);(*resultat)=1;}
             else
-            quizfalse(ecran);
+            {quizfalse(ecran);(*resultat)=0;}
           }
         break;
       }
       case SDL_MOUSEMOTION:
 
-      if(timer > 6000 && clic!=1 && event.motion.x> 50 && event.motion.x< 270 && event.motion.y> 350 && event.motion.y< 375)
+      if(timer > 3000 && clic!=1 && event.motion.x> 50 && event.motion.x< 270 && event.motion.y> 350 && event.motion.y< 375)
       choixrep1=TTF_RenderText_Blended(fontsolution,"Pas de solution reelle",colorchoixclic);
-      else if(timer > 6000 && clic!=2 && event.motion.x> 350 && event.motion.x< 530 && event.motion.y> 350 && event.motion.y< 375)
+      else if(timer > 3000 && clic!=2 && event.motion.x> 350 && event.motion.x< 530 && event.motion.y> 350 && event.motion.y< 375)
       choixrep2=TTF_RenderText_Blended(fontsolution,"Une seule solution",colorchoixclic);
-      else if(timer > 6000 && clic!=3 && event.motion.x> 650 && event.motion.x< 820 && event.motion.y> 350 && event.motion.y< 375)
+      else if(timer > 3000 && clic!=3 && event.motion.x> 650 && event.motion.x< 820 && event.motion.y> 350 && event.motion.y< 375)
       choixrep3=TTF_RenderText_Blended(fontsolution,"Deux solutions",colorchoixclic);
-      else if(timer > 6000 && clic!=4 && event.motion.x> 900 && event.motion.x< 1200 && event.motion.y> 350 && event.motion.y< 375)
+      else if(timer > 3000 && clic!=4 && event.motion.x> 900 && event.motion.x< 1200 && event.motion.y> 350 && event.motion.y< 375)
       choixrep4=TTF_RenderText_Blended(fontsolution,"L'ensemble de solutions est R",colorchoixclic);
       else
       {
@@ -601,16 +600,16 @@ if(clic==3)
 
 
 	    case SDL_MOUSEBUTTONDOWN:
-      if(timer > 6000 && event.button.x> 50 && event.button.x< 270 && event.button.y> 350 && event.button.y< 375)
+      if(timer > 3000 && event.button.x> 50 && event.button.x< 270 && event.button.y> 350 && event.button.y< 375)
       {choixrep1=TTF_RenderText_Blended(fontsolution,"Pas de solution reelle",colorchoixclicc);
       clic=1;valider=1;}
-      else if(timer > 6000 && event.button.x> 350 && event.button.x< 530 && event.button.y> 350 && event.button.y< 375)
+      else if(timer > 3000 && event.button.x> 350 && event.button.x< 530 && event.button.y> 350 && event.button.y< 375)
       {choixrep2=TTF_RenderText_Blended(fontsolution,"Une seule solution",colorchoixclicc);
       clic=2;valider=1;}
-      else if(timer > 6000 && event.button.x> 650 && event.button.x< 820 && event.button.y> 350 && event.button.y< 375)
+      else if(timer > 3000 && event.button.x> 650 && event.button.x< 820 && event.button.y> 350 && event.button.y< 375)
       {choixrep3=TTF_RenderText_Blended(fontsolution,"Deux solutions",colorchoixclicc);
       clic=3;valider=1;}
-      else if(timer > 6000 && event.button.x> 900 && event.button.x< 1200 && event.button.y> 350 && event.button.y< 375)
+      else if(timer > 3000 && event.button.x> 900 && event.button.x< 1200 && event.button.y> 350 && event.button.y< 375)
       {choixrep4=TTF_RenderText_Blended(fontsolution,"L'ensemble de solutions est R",colorchoixclicc);
       clic=4;valider=1;}
       if( (comparer==1 || comparer==2) && event.button.x>400 && event.button.x<550 && event.button.y>500 && event.button.y<525 )
@@ -633,7 +632,10 @@ if(valider==1)
       if((clic-1)==val)
       {
         switch (clic) {
-          case 1: quiztrue(ecran);continuer=0;
+          case 1:
+          quiztrue(ecran);
+          (*resultat)=1;
+          continuer=0;
 
           break;
           case 2:
@@ -644,19 +646,17 @@ if(valider==1)
           comparer=2;
           break;
           case 4:
-          quiztrue(ecran);continuer=0;
-
+          quiztrue(ecran);
+          (*resultat)=1;
+          continuer=0;
           break;
-
         }
-
-
       }
       else
       {
-
-        quizfalse(ecran);continuer=0;
-
+        quizfalse(ecran);
+        (*resultat)=0;
+        continuer=0;
       }
 
 
@@ -679,14 +679,6 @@ if(timechange==1)
 j--;
 i=0;
 }
-// i=rand() % 100;
-
-
-//comparer
-
-
-
-
 
 
 
@@ -695,9 +687,9 @@ i=0;
 SDL_Flip(ecran);
 
 }//while continuer.
-TTF_Quit();
-/*SDL_FreeSurface(coordinates);SDL_FreeSurface(reponse);SDL_FreeSurface(reponse2);SDL_FreeSurface(reponse3);SDL_FreeSurface(solu);SDL_FreeSurface(solutionx1);
-SDL_FreeSurface(solutionx2);SDL_FreeSurface(question);SDL_FreeSurface(aa);SDL_FreeSurface(bb);SDL_FreeSurface(cc);SDL_FreeSurface(alpha);
+
+SDL_FreeSurface(coordinates);SDL_FreeSurface(reponse);if (comparer==2)SDL_FreeSurface(reponse2);SDL_FreeSurface(reponse3);/*SDL_FreeSurface(solu);SDL_FreeSurface(solutionx1);
+SDL_FreeSurface(solutionx2);*/SDL_FreeSurface(question);SDL_FreeSurface(aa);SDL_FreeSurface(bb);SDL_FreeSurface(cc);SDL_FreeSurface(alpha);
 SDL_FreeSurface(question2);SDL_FreeSurface(choixrep1);SDL_FreeSurface(choixrep2);SDL_FreeSurface(choixrep3);SDL_FreeSurface(choixrep4);
-*/
+TTF_Quit();
 }

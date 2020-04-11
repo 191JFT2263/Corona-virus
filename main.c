@@ -79,7 +79,7 @@ if(k==10)
 k=0;
 }
 k++;
-if(i==40)i=0;
+if(i==23)i=0;
 SDL_BlitSurface(image[2].screen,NULL,ecran,&image[2].position);
 SDL_BlitSurface(image[5].screen,NULL,ecran,&image[5].position);
 SDL_BlitSurface(image[8].screen,NULL,ecran,&image[8].position);
@@ -104,7 +104,7 @@ else if(entre==3 || boutonmenu3==1)
 	continuer=0;
 	break;
 	case SDL_KEYDOWN:
-		SDL_Delay(100);
+
 		Mix_PlayChannel(-1,clickson,0);
 		switch (event.key.keysym.sym)
 		{
@@ -123,14 +123,13 @@ else if(entre==3 || boutonmenu3==1)
 		SDL_Delay(100);
 		break;
 
-		case SDLK_UP:
-		up(&prec,image,&entre);SDL_Delay(100);break;
+		case SDLK_LEFT:
+		up(&prec,image,&entre);SDL_Delay(200);break;
 
-		case SDLK_DOWN:
-		down(&prec,image,&entre);SDL_Delay(100);break;
+		case SDLK_RIGHT:
+		down(&prec,image,&entre);SDL_Delay(200);break;
 
 		case SDLK_KP_ENTER:
-		Mix_PlayChannel(-1,clickson,0);
 		switch (entre)
 		{
 		case 1:	SDL_BlitSurface(image[4].screen,NULL,ecran,&image[2].position);
@@ -161,7 +160,7 @@ else if(entre==3 || boutonmenu3==1)
 		Mix_PlayChannel(-1,clickson,0);
 		if(event.button.button == SDL_BUTTON_LEFT)
 		{
-			if(event.button.x> 570 && event.button.x< 710 && event.button.y> 320 && event.button.y< 366)
+			if(event.button.x> 300 && event.button.x< 460 && event.button.y> 525 && event.button.y< 592)
 			{
 
 			SDL_BlitSurface(image[4].screen,NULL,ecran,&image[2].position);
@@ -171,7 +170,7 @@ else if(entre==3 || boutonmenu3==1)
 
 
 			}
-			else if(event.button.x> 570 && event.button.x< 710 && event.button.y> 402 && event.button.y< 447)
+			else if(event.button.x> 560 && event.button.x< 720 && event.button.y> 525 && event.button.y< 592)
 			{
 
 			SDL_BlitSurface(image[7].screen,NULL,ecran,&image[5].position);
@@ -179,7 +178,7 @@ else if(entre==3 || boutonmenu3==1)
 			SDL_Delay(100);
 			setting(ecran,image,&boutonfull,&captfull,clickson,music,&entre,&prec);
 			}
-			else if(event.button.x > 570 && event.button.x < 710 && event.button.y > 485 && event.button.y< 530 )
+			else if(event.button.x > 820 && event.button.x < 980 && event.button.y > 525 && event.button.y< 592 )
 			{
 			SDL_BlitSurface(image[10].screen,NULL,ecran,&image[8].position);
 			SDL_Flip(ecran);
@@ -194,17 +193,17 @@ else if(entre==3 || boutonmenu3==1)
 	case SDL_MOUSEMOTION:
 
 		image[0].position.x = event.motion.x;image[0].position.y = event.motion.y;
-		if(event.motion.x> 570 && event.motion.x< 710 && event.motion.y> 320 && event.motion.y< 366 )
+		if(event.motion.x> 300 && event.motion.x< 460 && event.motion.y> 525 && event.motion.y< 592 )
 		{
 			SDL_BlitSurface(image[3].screen,NULL,ecran,&image[2].position);entre=1;
 
 		}
-		if(event.motion.x> 570 && event.motion.x< 710 && event.motion.y> 402 && event.motion.y< 447 )
+		if(event.motion.x> 560 && event.motion.x< 720 && event.motion.y> 525 && event.motion.y< 592 )
 		{
 			SDL_BlitSurface(image[6].screen,NULL,ecran,&image[5].position);entre=2;
 		}
 
-		else if(event.motion.x> 570 && event.motion.x< 710 && event.motion.y> 485 && event.motion.y< 530 )
+		else if(event.motion.x> 820 && event.motion.x< 980 && event.motion.y> 525 && event.motion.y< 592 )
 		{
 			SDL_BlitSurface(image[9].screen,NULL,ecran,&image[8].position);entre=3;
 

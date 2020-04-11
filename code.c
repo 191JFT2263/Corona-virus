@@ -4,48 +4,30 @@ void loadannimation(imgconfig *image2)
 {
 
 
-image2[0].screen=IMG_Load("IMAGE/ANNIMATION/00000.jpg");
-image2[1].screen=IMG_Load("IMAGE/ANNIMATION/00001.jpg");
-image2[2].screen=IMG_Load("IMAGE/ANNIMATION/00002.jpg");
-image2[3].screen=IMG_Load("IMAGE/ANNIMATION/00003.jpg");
-image2[4].screen=IMG_Load("IMAGE/ANNIMATION/00004.jpg");
-image2[5].screen=IMG_Load("IMAGE/ANNIMATION/00005.jpg");
-image2[6].screen=IMG_Load("IMAGE/ANNIMATION/00006.jpg");
-image2[7].screen=IMG_Load("IMAGE/ANNIMATION/00007.jpg");
-image2[8].screen=IMG_Load("IMAGE/ANNIMATION/00008.jpg");
-image2[9].screen=IMG_Load("IMAGE/ANNIMATION/00009.jpg");
-image2[10].screen=IMG_Load("IMAGE/ANNIMATION/00010.jpg");
-image2[11].screen=IMG_Load("IMAGE/ANNIMATION/00011.jpg");
-image2[12].screen=IMG_Load("IMAGE/ANNIMATION/00012.jpg");
-image2[13].screen=IMG_Load("IMAGE/ANNIMATION/00013.jpg");
-image2[14].screen=IMG_Load("IMAGE/ANNIMATION/00014.jpg");
-image2[15].screen=IMG_Load("IMAGE/ANNIMATION/00015.jpg");
-image2[16].screen=IMG_Load("IMAGE/ANNIMATION/00016.jpg");
-image2[17].screen=IMG_Load("IMAGE/ANNIMATION/00017.jpg");
-image2[18].screen=IMG_Load("IMAGE/ANNIMATION/00018.jpg");
-image2[19].screen=IMG_Load("IMAGE/ANNIMATION/00019.jpg");
-image2[20].screen=IMG_Load("IMAGE/ANNIMATION/00020.jpg");
-image2[21].screen=IMG_Load("IMAGE/ANNIMATION/00021.jpg");
-image2[22].screen=IMG_Load("IMAGE/ANNIMATION/00022.jpg");
-image2[23].screen=IMG_Load("IMAGE/ANNIMATION/00023.jpg");
-image2[24].screen=IMG_Load("IMAGE/ANNIMATION/00024.jpg");
-image2[25].screen=IMG_Load("IMAGE/ANNIMATION/00025.jpg");
-image2[26].screen=IMG_Load("IMAGE/ANNIMATION/00026.jpg");
-image2[27].screen=IMG_Load("IMAGE/ANNIMATION/00027.jpg");
-image2[28].screen=IMG_Load("IMAGE/ANNIMATION/00028.jpg");
-image2[29].screen=IMG_Load("IMAGE/ANNIMATION/00029.jpg");
-image2[30].screen=IMG_Load("IMAGE/ANNIMATION/00030.jpg");
-image2[31].screen=IMG_Load("IMAGE/ANNIMATION/00031.jpg");
-image2[32].screen=IMG_Load("IMAGE/ANNIMATION/00032.jpg");
-image2[33].screen=IMG_Load("IMAGE/ANNIMATION/00033.jpg");
-image2[34].screen=IMG_Load("IMAGE/ANNIMATION/00034.jpg");
-image2[35].screen=IMG_Load("IMAGE/ANNIMATION/00035.jpg");
-image2[36].screen=IMG_Load("IMAGE/ANNIMATION/00036.jpg");
-image2[37].screen=IMG_Load("IMAGE/ANNIMATION/00037.jpg");
-image2[38].screen=IMG_Load("IMAGE/ANNIMATION/00038.jpg");
-image2[39].screen=IMG_Load("IMAGE/ANNIMATION/00039.jpg");
-image2[40].screen=IMG_Load("IMAGE/ANNIMATION/00040.jpg");
-image2[41].screen=IMG_Load("IMAGE/ANNIMATION/00041.jpg");
+image2[0].screen=IMG_Load("IMAGE/ANNIMATION/1.jpg");
+image2[1].screen=IMG_Load("IMAGE/ANNIMATION/2.jpg");
+image2[2].screen=IMG_Load("IMAGE/ANNIMATION/3.jpg");
+image2[3].screen=IMG_Load("IMAGE/ANNIMATION/4.jpg");
+image2[4].screen=IMG_Load("IMAGE/ANNIMATION/5.jpg");
+image2[5].screen=IMG_Load("IMAGE/ANNIMATION/6.jpg");
+image2[6].screen=IMG_Load("IMAGE/ANNIMATION/7.jpg");
+image2[7].screen=IMG_Load("IMAGE/ANNIMATION/8.jpg");
+image2[8].screen=IMG_Load("IMAGE/ANNIMATION/9.jpg");
+image2[9].screen=IMG_Load("IMAGE/ANNIMATION/10.jpg");
+image2[10].screen=IMG_Load("IMAGE/ANNIMATION/11.jpg");
+image2[11].screen=IMG_Load("IMAGE/ANNIMATION/12.jpg");
+image2[12].screen=IMG_Load("IMAGE/ANNIMATION/13.jpg");
+image2[13].screen=IMG_Load("IMAGE/ANNIMATION/14.jpg");
+image2[14].screen=IMG_Load("IMAGE/ANNIMATION/15.jpg");
+image2[15].screen=IMG_Load("IMAGE/ANNIMATION/16.jpg");
+image2[16].screen=IMG_Load("IMAGE/ANNIMATION/17.jpg");
+image2[17].screen=IMG_Load("IMAGE/ANNIMATION/18.jpg");
+image2[18].screen=IMG_Load("IMAGE/ANNIMATION/19.jpg");
+image2[19].screen=IMG_Load("IMAGE/ANNIMATION/20.jpg");
+image2[20].screen=IMG_Load("IMAGE/ANNIMATION/21.jpg");
+image2[21].screen=IMG_Load("IMAGE/ANNIMATION/22.jpg");
+image2[22].screen=IMG_Load("IMAGE/ANNIMATION/23.jpg");
+image2[23].screen=IMG_Load("IMAGE/ANNIMATION/24.jpg");
 
 }
 void loadimage(imgconfig *image)
@@ -55,18 +37,18 @@ image[1].screen=IMG_Load("IMAGE/background.png");
 			image[1].position.x=0;
 			image[1].position.y=0;
 image[2].screen=IMG_Load("IMAGE/new_game.png");
-			image[2].position.x=560;
-			image[2].position.y=310;
+			image[2].position.x=300;
+			image[2].position.y=525;
 image[3].screen=IMG_Load("IMAGE/new_game2.png");
 image[4].screen=IMG_Load("IMAGE/new_game3.png");
 image[5].screen=IMG_Load("IMAGE/SETTING1.png");
 			image[5].position.x=560;
-			image[5].position.y=392;
+			image[5].position.y=525;
 image[6].screen=IMG_Load("IMAGE/SETTING2.png");
 image[7].screen=IMG_Load("IMAGE/SETTING3.png");
 image[8].screen=IMG_Load("IMAGE/QUIT1.png");
-			image[8].position.x=560;
-			image[8].position.y=474;
+			image[8].position.x=820;
+			image[8].position.y=525;
 image[9].screen=IMG_Load("IMAGE/QUIT2.png");
 image[10].screen=IMG_Load("IMAGE/QUIT3.png");
 image[11].screen=IMG_Load("IMAGE/JOUER.png");
@@ -177,6 +159,7 @@ while(continuer)
 
 	case SDL_QUIT:
 	continuer=0;
+	SDL_Delay(200);
 	break;
 
 	case SDL_KEYDOWN:
@@ -188,6 +171,7 @@ while(continuer)
 			{
 			continuer=0;
 			boutonback=1;
+			SDL_Delay(200);
 			}
 			break;
 		}
@@ -200,7 +184,12 @@ while(continuer)
 
 		if	(event.motion.x> 166 && event.motion.x< 310 && event.motion.y> 81 && event.motion.y< 226 )
 			{
+
 			boutonback=1;
+			}
+			else
+			{
+				boutonback=0;
 			}
 
 	break;
@@ -219,7 +208,7 @@ while(continuer)
 				  {remove("FICHE/mode.txt");(*boutonfull)=0;(*captfull)=1;}
 
 			else if(event.button.x> 166 && event.button.x< 310 && event.button.y> 81 && event.button.y< 226 )
-			{continuer=0;boutonback=1;}
+			{continuer=0;boutonback=1;SDL_Delay(100);}
 			else if(event.button.x> 716 && event.button.x< 723 && event.button.y> 462 && event.button.y< 476 )
 			{
 			image[16].position.x=image[0].position.x-10;
@@ -249,8 +238,9 @@ while(continuer)
 
 SDL_BlitSurface(image[15].screen,NULL,ecran,&image[15].position);
 if(boutonback==1)
-{SDL_BlitSurface(image[12].screen,NULL,ecran,&image[12].position);boutonback==0;SDL_Delay(100);}
 SDL_BlitSurface(image[12].screen,NULL,ecran,&image[12].position);
+
+//SDL_BlitSurface(image[12].screen,NULL,ecran,&image[12].position);
 if((*boutonfull)==1)
 	{SDL_BlitSurface(image[14].screen,NULL,ecran,&image[14].position);}
 else if((*boutonfull)==0)

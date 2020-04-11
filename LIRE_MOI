@@ -6,4 +6,7 @@ gcc -o JEU main.c code.c enigme.c -lm -lSDL_mixer  `sdl-config --libs --cflags` 
 
 
 
-pour demmarer l'enigme il faut 'cliquez' sur la touche P du clavier //
+pour demmarer l'enigme il faut 'cliquez' sur la touche "P" du clavier //
+cliquez sur la touche "R" du clavier pour affiche la correction d'engime //
+
+>>>
